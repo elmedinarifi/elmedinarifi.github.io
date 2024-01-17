@@ -3,7 +3,7 @@ ul{
     margin: 0;
     height: 5vh;
     overflow: hidden;
-    background-color: #333;
+    background-color: lightgrey;
 }
 li{
     float: left;
@@ -12,6 +12,19 @@ li{
     display:flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+.indexcontainer{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    align-items: center;
+}
+.ikzelffoto{
+    border-radius: 50%;
+    overflow: hidden;
+    max-width: 45vw;
+    max-height: 35vh;
 }
 li a {
     font-size: large;
