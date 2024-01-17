@@ -1,9 +1,15 @@
 ul{
     list-style-type: none;
     margin: 0;
-    height: 5vh;
+    height: 100%;
     overflow: hidden;
-    background-color: lightgrey;
+}
+.list-div{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid black;
 }
 li{
     float: left;
@@ -35,8 +41,9 @@ li{
 }
 li a {
     font-size: large;
-    color: white;
-    padding: 1vw;
+    color: black;
+    padding: 3vw;
+    text-decoration: none;
 }
 .hyperlink-project:hover{
     color: red;
