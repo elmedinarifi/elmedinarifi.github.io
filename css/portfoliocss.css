@@ -39,19 +39,23 @@ li{
     max-width: 45vw;
     max-height: 35vh;
 }
+.container-project{
+    display: flex;
+    padding-top: 5vh;
+    align-items: center;
+    flex-direction: column;
+}
 li a {
     font-size: large;
     color: black;
     padding: 3vw;
     text-decoration: none;
 }
-.hyperlink-project:hover{
-    color: red;
-}
-.image-project:hover{
-    opacity : 0.5;
-}
 .image-project{
+    max-height: 70vh;
+    max-width: 60vw;
+}
+.image-prof{
     max-height: 25vh;
     max-width: 25vw;
 }
