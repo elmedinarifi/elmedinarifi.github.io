@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,49 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Skills</title>
     <link rel="stylesheet" href="css/portfoliocss.css"/>
-
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            color: #333;
+        }
+        .list-div {
+            width: 20%;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+        .list-div ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .list-div ul li {
+            margin-bottom: 20px;
+        }
+        .list-div ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .list-div ul li a:hover {
+            background-color: #e9ecef;
+        }
+        .container {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .container-item {
+            width: 100%;
+            margin-bottom: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: background-color 0.2s;
+        }
+        .container-item:hover {
+            background-color: #e9ecef;
+        }
+        .container-item img {
+            max-width: 100%;
+            border-radius: 5px;
+            display: block;
+            margin-top: 10px;
+        }
+        .iframe-container {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
-        <div class="list-div">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="professional_skills_semester1.html">Professional Skills</a></li>
-            <li><a href="portfolio.html">Projecten</a></li>
-        </ul>
-    </div>
-    <div class="container-nav" style="display: flex;">
-        <div class="container-nav-item" style="flex-direction: row;">
-            <h1>Semester 1</h1>
-            <a href="professional_skills_semester2.html" style="padding-left: 5%; text-decoration: none; color: black;"><h2>Semester 2</h2></a>
+    <div>
+        <div class="nav-container">
+            <ul class='nav-list'>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="professional_skills_semester1.html">Professional Skills</a></li>
+                <li><a href="portfolio.html">Projecten</a></li>
+            </ul>   
         </div>
-    </div>
-    <div class="row-container">
-        <div class="container">
-            <div class="container-item">
-                <h3>Plan van aanpak</h3>
-                <a class="hyperlink-project" href="Pva_Portfolio.docx"><img class="image-prof" src="images/planvanaanpak.jpg"></a>
-            </div>
-            <div class="container-item">
-                <h3>Feedback</h3>
-                <a class="hyperlink-project" href="Feedback.docx"><img class="image-prof" style="max-width: 20vw;" src="images/feedback.jpg"/></a>
-            </div>
-            <div class="container-item">
-                <h3>Vergadertechnieken</h3>
-                <a href="vergadertechnieken.html"><img class="image-prof" style="max-width: 20vw;" src="images/vergadertechnieken.jpg"/></a>
-            </div>
-            <div class="container-item">
-                <h3>Reflectie Verslag</h3>
-                <a href="Reflectieverslag_Eerstesemester_ElmedinArifi.docx"><img class="image-prof" style="max-width: 20vw;" src="images/vergadertechnieken.jpg"/></a>
-            </div>
-            <div class="container-item">
-                <h3>Presenteren</h3>
-                <a href="presenteren.html"><img class="image-prof" style="max-width: 20vw;" src="images/presenteren.jpg"/></a>
-            </div>
-            <div class="container-item">
-                <h3>Edumundo</h3>
-                <a href="Portfolio_Edumundo.docx"><img class="image-prof" style="max-width: 20vw;" src="images/edumundo.jpg"/></a>
+        <div class="container-nav">
+            <div class="container-nav-item">
+                <a href="professional_skills_semester1.html" style="width: 100%; padding-left: 5%; text-decoration: none; color: black;"><h2>Semester 1</h2></a>
+                <a href="professional_skills_semester2.html" style="width: 100%; padding-left: 5%; text-decoration: none; color: black;"><h2>Semester 2</h2></a>
             </div>
         </div>
+        <div class="container-column">
+            <div class="menu-item">
+                <ul>
+                    <li><a class="container-item" data-pdf="src/Pva_Portfolio.pdf">
+                        <h4>Plan van aanpak</h4>
+                    </a></li>
+                    <li><a class="container-item" data-pdf="src/Feedback.pdf">
+                        <h4>Feedback</h4>
+                    </a></li>
+                    <li><a class="container-item" href="vergadertechnieken.html">
+                        <h4>Vergadertechnieken</h4>
+                    </a></li>
+                    <li><a class="container-item" data-pdf="src/Reflectieverslag_Eerstesemester_ElmedinArifi.pdf">
+                            <h4>Reflectie verslag</h4>
+                        </a></li>
+                    <li><a class="container-item" href="presenteren.html">
+                        <h4>Presenteren</h4>
+                    </a></li>
+                    <li><a class="container-item" data-pdf="src/Portfolio_Edumundo.pdf">
+                        <h4>Edumundo</h4>
+                    </a></li>
+                </ul>
+            </div>
+            <div></div>
+            <div class="container-row-item">
+                <div class="iframe-container" id="iframe-container">
+                    <iframe id="pdf-iframe"></iframe>
+                </div>
+            </div>
+        </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const containerItems = document.querySelectorAll('.container-item');
+            const iframeContainer = document.getElementById('iframe-container');
+            const iframe = document.getElementById('pdf-iframe');
+
+            containerItems.forEach(item => {
+                item.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+                    const pdfUrl = item.getAttribute('data-pdf');
+                    iframe.src = pdfUrl;
+                    iframeContainer.style.display = 'block';
+                    window.scrollTo({ top: iframeContainer.offsetTop, behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

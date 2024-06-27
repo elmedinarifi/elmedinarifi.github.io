@@ -80,51 +80,57 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="list">
-            <ul>
+    <div>
+        <div class="nav-container">
+            <ul class='nav-list'>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="professional_skills_semester1.html">Professional Skills</a></li>
                 <li><a href="portfolio.html">Projecten</a></li>
-            </ul>
-        </div>    
+            </ul>   
+        </div>
         <div class="container-nav">
             <div class="container-nav-item">
-                <h1>Semester 1</h1>
-                <a href="professional_skills_semester2.html" style="padding-left: 5%; text-decoration: none; color: black;"><h2>Semester 2</h2></a>
+                <a href="professional_skills_semester1.html" style="width: 100%; padding-left: 5%; text-decoration: none; color: black;"><h2>Semester 1</h2></a>
+                <a href="professional_skills_semester2.html" style="width: 100%; padding-left: 5%; text-decoration: none; color: black;"><h2>Semester 2</h2></a>
             </div>
         </div>
-        <div class="container">
-            <ul>
-                <li><a class="container-item" data-pdf="Pva_Portfolio.pdf">
-                    <h3>Plan van aanpak</h3>
-                    <img src="images/planvanaanpak.jpg" alt="Plan van aanpak">
-                </a></li>
-                <li><a class="container-item" data-pdf="Feedback.pdf">
-                    <h3>Feedback</h3>
-                    <img src="images/feedback.jpg" alt="Feedback">
-                </a></li>
-                <li><a class="container-item" data-pdf="Vergadertechnieken.pdf">
-                    <h3>Vergadertechnieken</h3>
-                    <img src="images/vergadertechnieken.jpg" alt="Vergadertechnieken">
-                </a></li>
-                <li><a class="container-item" data-pdf="Presenteren.pdf">
-                        <h3>Presenteren</h3>
-                        <img src="images/presenteren.jpg" alt="Presenteren">
+        <div class="container-column">
+            <div class="menu-item">
+                <ul>
+                    <li><a class="container-item" data-pdf="src/strokenplanning_walk_smarter.pdf">
+                        <h4>Plan van aanpak</h4>
                     </a></li>
-                <li><a class="container-item" data-pdf="Vergadertechnieken.pdf">
-                    <h3>Vergadertechnieken</h3>
-                    <img src="images/vergadertechnieken.jpg" alt="Vergadertechnieken">
-                </a></li>
-                <li><a class="container-item" data-pdf="Vergadertechnieken.pdf">
-                    <h3>Vergadertechnieken</h3>
-                    <img src="images/vergadertechnieken.jpg" alt="Vergadertechnieken">
-                </a></li>
-            </ul>
-        </div>
-        <div class="container">
-            <div class="iframe-container" id="iframe-container">
-                <iframe id="pdf-iframe"></iframe>
+                    <li><a class="container-item" data-pdf="src/Reflectieverslag_tweedesemester_elmedinarifi.pdf">
+                        <h4>Reflectie Verslag</h4>
+                    </a></li>
+                    <li><a class="container-item" data-pdf="src/Portfolio_Edumundo.pdf">
+                        <h4>Edumundo</h4>
+                    </a></li>
+                    <li><a class="container-item" data-pdf="src/POPElmedinArifi.pdf">
+                        <h4>POP</h4>
+                    </a></li>
+                    <li><a class="container-item" data-pdf="src/walk_smarter_presentatie.pdf">
+                        <h4>Presenteren</h4>
+                    </a></li>
+                    <li><a class="container-item" data-pdf="src/bouwplan_walk_smarter.pdf">
+                        <h4>Bouwplan</h4>
+                    </a></li>
+                    <li><a class="container-item" data-pdf="src/360graden_feedback_MartVelema.pdf">
+                        <h4>Feedback - <br>Mart Velema</h4>
+                    </a></li>
+                    <li><a class="container-item" data-pdf="src/360graden_feedback_BramSuurd.pdf">
+                        <h4>Feedback - <br>Bram Suurd</h4>
+                    </a></li>
+                    <li><a class="container-item" data-pdf="src/larsfeedbackvoorelmedin.pdf">
+                        <h4>Feedback - <br>Lars Kuijer</h4>
+                    </a></li>
+                </ul>
+            </div>
+            <div></div>
+            <div class="container-row-item">
+                <div class="iframe-container" id="iframe-container">
+                    <iframe id="pdf-iframe"></iframe>
+                </div>
             </div>
         </div>
     </div>
