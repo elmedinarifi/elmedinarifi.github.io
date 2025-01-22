@@ -2,6 +2,9 @@
     font-family: "Open Sans";
     src: url(../OpenSans.ttf);
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 *{
     font-family: "Open Sans";
 }

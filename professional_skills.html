@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Skills</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animated-bg {
+            background: linear-gradient(45deg, #0a0a0a, #000000, #0a0a0a);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .button-glass {
+            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .line {
+            position: absolute;
+            width: 1px;
+            height: 2px;
+            background: rgba(255, 0, 0, 0.4);
+            animation: move var(--duration) linear infinite;
+            transform-origin: center;
+            z-index: -1;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(var(--startX), var(--startY)) rotate(var(--angle));
+            }
+            100% {
+                transform: translate(var(--endX), var(--endY)) rotate(var(--angle));
+            }
+        }
+
+        .button-glass:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="animated-bg text-white min-h-screen">
+    <!-- Matrix Background -->
+    <div class="matrix-bg" id="matrixBg"></div>
+
+    <!-- Navigation -->
+    <div class="glass-effect p-6 sticky top-0 z-50">
+        <ul class="flex justify-center space-x-8">
+            <li><a href="index.html" class="font-extrabold text-lg">Home</a></li>
+            <li><a href="professional_skills.html" class="font-extrabold text-lg">Professional Skills</a></li>
+            <li><a href="portfolio.html" class="font-extrabold text-lg">Projecten</a></li>
+        </ul>
+    </div>
+
+    <!-- Year and Semester Selection -->
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex mt-6">
+            <!-- Year Buttons -->
+            <div class="space-y-2 w-24">
+                <button id="year1Btn" class="w-full p-2 button-glass text-sm font-bold rounded-lg">Jaar 1</button>
+                <button id="year2Btn" class="w-full p-2 button-glass text-sm font-bold rounded-lg">Jaar 2</button>
+            </div>
+            
+            <!-- Semester Selection -->
+            <div id="year1Semesters" class="hidden ml-20 flex-grow">
+                <div class="flex justify-center space-x-4">
+                    <button data-year="1" data-semester="1" class="semester-btn w-40 p-3 button-glass font-bold rounded-lg">Semester 1</button>
+                    <button data-year="1" data-semester="2" class="semester-btn w-40 p-3 button-glass font-bold rounded-lg">Semester 2</button>
+                </div>
+            </div>
+            <div id="year2Semesters" class="hidden ml-20 flex-grow">
+                <div class="flex justify-center space-x-4">
+                    <button data-year="2" data-semester="1" class="semester-btn w-40 p-3 button-glass font-bold rounded-lg">Semester 1</button>
+                    <button data-year="2" data-semester="2" class="semester-btn w-40 p-3 button-glass font-bold rounded-lg">Semester 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Container -->
+    <div id="contentContainer" class="max-w-7xl mx-auto mt-8 p-8 glass-effect rounded-2xl shadow-2xl">
+        <div class="flex gap-8">
+            <!-- Content sections -->
+            <div class="w-1/4">
+                <div id="year1sem1" class="content-section hidden">
+                    <ul class="space-y-4 w-64">
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/Pva_Portfolio.pdf">
+                                Plan van aanpak
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/Feedback.pdf">
+                                Feedback
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative">
+                                Vergadertechnieken
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/Reflectieverslag_Eerstesemester_ElmedinArifi.pdf">
+                                Reflectie verslag
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative">
+                                Presenteren
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/Portfolio_Edumundo.pdf">
+                                Edumundo
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="year1sem2" class="content-section hidden">
+                    <ul class="space-y-4 w-64">
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/Functioneel_Ontwerp.pdf">
+                                Plan van aanpak - Functioneel Ontwerp
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/Technisch_Ontwerp.pdf">
+                                Plan van aanpak - Technisch Ontwerp
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/ReqAnalyse_INF1C_CodeCrusaders.pdf">
+                                Plan van aanpak - Requirements analyse
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/Reflectieverslag_tweedesemester_elmedinarifi.pdf">
+                                Reflectie Verslag
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/Portfolio_Edumundo.pdf">
+                                Edumundo
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/certificaat_hogeschooltaal.pdf">
+                                Hogeschool taal - Certificaat
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/POP_ElmedinArifi.pdf">
+                                POP
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/walk_smarter_presentatie.pdf">
+                                Presenteren
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/bouwplan_walk_smarter.pdf">
+                                Bouwplan
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/Technisch_Advies.pdf">
+                                Technisch advies rapport
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/360graden_feedback_MartVelema.pdf">
+                                Feedback krijgen - Mart Velema
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/360graden_feedback_BramSuurd.pdf">
+                                Feedback krijgen - Bram Suurd
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/larsfeedbackvoorelmedin.pdf">
+                                Feedback krijgen - Lars Kuijer
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/feedbacklucaslubbers.pdf">
+                                Feedback krijgen - Lucas Lubbers
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/feedbackjesse.pdf">
+                                Feedback krijgen - Jesse van der voet
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/feedbackbryan.pdf">
+                                Feedback krijgen - Bryan Potze
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/feedbackgevenP2.pdf">
+                                Feedbackgeven - Periode 2
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/feedbackgevenP1.pdf">
+                                Feedbackgeven - Periode 1
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-4 button-glass rounded-lg font-bold relative" data-pdf="src/feedbackgevenbram.pdf">
+                                Feedbackgeven - Bram Suurd
+                                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-red-500/40"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="year2sem1" class="content-section hidden">
+                    <!-- Year 2 Semester 1 content -->
+                </div>
+                <div id="year2sem2" class="content-section hidden">
+                    <!-- Year 2 Semester 2 content -->
+                </div>
+            </div>
+
+            <!-- PDF viewer -->
+            <div class="iframe-container w-2/3 sticky top-28" id="iframe-container">
+                <iframe id="pdf-iframe" class="w-full h-[800px] rounded-lg glass-effect"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create matrix-like background animation with random directions
+        const matrixBg = document.getElementById('matrixBg');
+        const numberOfLines = 100;
+
+        function getRandomPosition(max) {
+            return Math.random() * max;
+        }
+
+        function getRandomAngle() {
+            return Math.random() * 360;
+        }
+
+        for (let i = 0; i < numberOfLines; i++) {
+            const line = document.createElement('div');
+            line.className = 'line';
+            
+            const duration = Math.random() * 4 + 3;
+            const delay = Math.random() * 2;
+            
+            const startX = getRandomPosition(window.innerWidth);
+            const startY = getRandomPosition(window.innerHeight);
+            const angle = getRandomAngle();
+            const distance = Math.random() * 200 + 100;
+            const endX = startX + Math.cos(angle * Math.PI / 180) * distance;
+            const endY = startY + Math.sin(angle * Math.PI / 180) * distance;
+
+            line.style.setProperty('--startX', `${startX}px`);
+            line.style.setProperty('--startY', `${startY}px`);
+            line.style.setProperty('--endX', `${endX}px`);
+            line.style.setProperty('--endY', `${endY}px`);
+            line.style.setProperty('--angle', `${angle}deg`);
+            line.style.setProperty('--duration', `${duration}s`);
+            line.style.animationDelay = `${delay}s`;
+            
+            line.style.left = `${startX}px`;
+            line.style.top = `${startY}px`;
+            
+            matrixBg.appendChild(line);
+        }
+
+        // Button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const year1Btn = document.getElementById('year1Btn');
+            const year2Btn = document.getElementById('year2Btn');
+            const year1Semesters = document.getElementById('year1Semesters');
+            const year2Semesters = document.getElementById('year2Semesters');
+            const contentSections = document.querySelectorAll('.content-section');
+            const iframeContainer = document.getElementById('iframe-container');
+            const pdfIframe = document.getElementById('pdf-iframe');
+
+            year1Btn.addEventListener('click', () => {
+                year1Semesters.classList.remove('hidden');
+                year2Semesters.classList.add('hidden');
+                hideAllContent();
+            });
+
+            year2Btn.addEventListener('click', () => {
+                year2Semesters.classList.remove('hidden');
+                year1Semesters.classList.add('hidden');
+                hideAllContent();
+            });
+
+            document.querySelectorAll('.semester-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const year = btn.dataset.year;
+                    const semester = btn.dataset.semester;
+                    showContent(year, semester);
+                });
+            });
+
+            document.querySelectorAll('[data-pdf]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pdfUrl = link.getAttribute('data-pdf');
+                    pdfIframe.src = pdfUrl;
+                    iframeContainer.classList.remove('hidden');
+                    iframeContainer.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            function hideAllContent() {
+                contentSections.forEach(section => section.classList.add('hidden'));
+                iframeContainer.classList.add('hidden');
+            }
+
+            function showContent(year, semester) {
+                hideAllContent();
+                const contentId = `year${year}sem${semester}`;
+                const content = document.getElementById(contentId);
+                if (content) {
+                    content.classList.remove('hidden');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

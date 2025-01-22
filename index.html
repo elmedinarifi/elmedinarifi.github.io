@@ -1,28 +1,105 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="css/portfoliocss.css"/>
+        <!-- Add Tailwind CSS via CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @keyframes gradient {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+
+            .animated-bg {
+                background: linear-gradient(45deg, #0a0a0a, #0a0a0a, #0f0f0f);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+            }
+
+            .glass-effect {
+                backdrop-filter: blur(10px);
+                background: rgba(19, 19, 19, 0.284);
+            }
+            /* Matrix-like background animation */
+            .matrix-bg {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                overflow: hidden;
+            }
+
+            .line {
+                position: absolute;
+                width: 2px;
+                height: 100%;
+                background: rgba(255, 0, 0, 0.1);
+                animation: matrix-line var(--duration) linear infinite;
+            }
+
+            @keyframes matrix-line {
+                0% {
+                    transform: translateY(-100%);
+                }
+                100% {
+                    transform: translateY(100%);
+                }
+            }
+        </style>
     </head>
-    <body>
-        <div class="list-div">
-            <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="professional_skills_semester1.html">Professional Skills</a></li>
-                <li><a href="portfolio.html">Projecten</a></li>
+    <body class="animated-bg text-gray-100 min-h-screen">
+        <!-- Matrix Background -->
+        <div class="matrix-bg" id="matrixBg"></div>
+
+        <!-- Navigation -->
+        <div class="glass-effect p-6 sticky top-0 z-50">
+            <ul class="flex justify-center space-x-8">
+                <li><a href="index.html" class="font-bold text-lg">Home</a></li>
+                <li><a href="professional_skills.html" class="font-bold text-lg">Professional Skills</a></li>
+                <li><a href="portfolio.html" class="font-bold text-lg">Projecten</a></li>
             </ul>
         </div>
-        <div class="indexcontainer">
-            <div>
-                <img class="ikzelffoto" src="images/ikzelf.jpg"/>
-            </div>
-            <div>
-                <h1>Elmedin Arifi</h1>
-            </div>
-            <div style="text-align: center;">
-                <p>Gepassioneerde software engineer die een nieuwe uitdaging op het HBO wilt aangaan.<br>
-                Met een achtergrond als software developer van het MBO en ervaring als stagiair, zoek ik een diverse manier om me te verbeteren.<br>
-                <br>
-                </p>
+
+        <!-- Main Content -->
+        <div class="max-w-3xl mx-auto mt-10 p-8 glass-effect rounded-2xl shadow-2xl">
+            <div class="flex flex-col items-center">
+                <img 
+                    class="profile-image relative w-72 h-72 rounded-full border-4 border-gray-800 shadow-lg object-cover mb-6" 
+                    src="images/ikzelfverbeterd.jpg" 
+                    alt="Elmedin Arifi"
+                />
+                <h1 class="text-4xl font-bold mb-6">Elmedin Arifi</h1>
+                <div class="text-center">
+                    <p class="text-lg leading-relaxed text-gray-400">
+                        Gepassioneerde software engineer die een nieuwe uitdaging op het HBO wilt aangaan.<br>
+                        Met een achtergrond als software developer van het MBO en ervaring als stagiair, zoek ik een diverse manier om me te verbeteren.
+                    </p>
+                </div>
             </div>
         </div>
+
+        <script>
+            // Create matrix-like background animation
+            const matrixBg = document.getElementById('matrixBg');
+            const numberOfLines = 50;
+
+            for (let i = 0; i < numberOfLines; i++) {
+                const line = document.createElement('div');
+                line.className = 'line';
+                
+                // Random properties for each line
+                const duration = Math.random() * 3 + 2; // 2-5 seconds
+                const delay = Math.random() * 2; // 0-2 seconds delay
+                const left = Math.random() * 100; // Random position
+                
+                line.style.left = `${left}%`;
+                line.style.setProperty('--duration', `${duration}s`);
+                line.style.animationDelay = `${delay}s`;
+                
+                matrixBg.appendChild(line);
+            }
+        </script>
     </body>
 </html>
